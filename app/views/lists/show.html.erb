@@ -1,0 +1,17 @@
+<div class="banner" style="--image: url(<%= @list.image_url %>)">
+  <h1><%= @list.name %></h1>
+</div>
+<% if !@list.movies.first.nil? %>
+<div class="container">
+  <div class="row">
+    <% @list.movies.each do |movie| %>
+      <div class="col-4">
+        <div class="card">
+          <%= movie.title %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
+<%= link_to 'New bookmark', new_list_bookmark_path(@list) %>

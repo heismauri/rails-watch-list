@@ -1,0 +1,12 @@
+<h1>Lists#index</h1>
+<div class="container">
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-4">
+        <div class="card">
+          <%= link_to list.name, list_path(list) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<h1>New lists</h1>
+<%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.association :movies %>
+  <%= f.input :image_url %>
+  <%= f.button :submit, class: "btn-primary" %>
+<% end %>
