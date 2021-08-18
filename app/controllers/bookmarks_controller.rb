@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :find_list, expect: :delete
+  before_action :find_list, only: %i[new create]
   def new
     @bookmark = Bookmark.new
   end
@@ -11,9 +11,10 @@ class BookmarksController < ApplicationController
     redirect_to list_path(@list)
   end
 
-  def delete
+  def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
+    redirect_to list_path(@bookmark.list)
   end
 
   private

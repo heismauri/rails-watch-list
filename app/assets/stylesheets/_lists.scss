@@ -1,3 +1,40 @@
+.navbar-brand {
+  font-family: $headings-font-family;
+}
+
 .banner {
-  background-image: --image, linear-gradient(#eb01a5, #d13531);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), var(--image);
+  background-size: cover;
+  background-position: center;
+  padding: 350px 0 0;
+  h1 {
+    color: white;
+    line-height: 62px;
+    font-size: 5rem;
+    margin: 0;
+  }
+}
+
+.card {
+  .delete-bookmark {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  strong {
+    color: black;
+  }
+  .fa-star {
+    color: yellow;
+  }
+}
+
+.card.index {
+  padding: 120px 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), var(--image);
+  background-size: 110%;
+  background-position: center;
+  h2 a {
+    color: white;
+  }
 }
