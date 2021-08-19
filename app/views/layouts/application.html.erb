@@ -13,8 +13,8 @@
   <body>
     <nav class="navbar navbar-light border-bottom px-4">
       <div class="container">
-        <%= link_to "WatchList", lists_path, class: "navbar-brand" %>
-        <% if current_page?(lists_path) %>
+        <%= link_to "WatchList", root_path, class: "navbar-brand" %>
+        <% if current_page?(root_path) %>
           <%= link_to "New list", new_list_path, class: "btn btn-outline-primary" %>
         <% end %>
       </div>
