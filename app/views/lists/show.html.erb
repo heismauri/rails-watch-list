@@ -1,4 +1,4 @@
-<div class="banner" style="--image: url(<%= @list.image_url %>)">
+<div class="banner" style="--image: url('<%= cl_image_path @list.banner.key, width: 2000, height: 412, crop: :fill %>')">
   <div class="container">
     <h1><%= @list.name %></h1>
   </div>
@@ -14,7 +14,7 @@
           <%= link_to bookmark_path(movie.bookmarks.first), class: "btn btn-outline-danger shadow delete-bookmark", method: :delete, data: { confirm: "Delete '#{movie.title}'?" } do %>
             <i class="fas fa-trash"></i>
           <% end %>
-          <img src="<%= movie.poster_url %>" class="card-img-top" alt="<%= movie.title %> poster">
+          <%= cl_image_tag movie.poster.key, class: "card-img-top", alt: "#{movie.title} poster", width: 600, height: 300, crop: :fill %>
             <div class="card-body">
               <h4 class="text-muted"><strong><%= movie.title %></strong><small> • <%= movie.rating %> <i class="fas fa-star"></i></small></h4>
               <p class="card-text"><%= movie.overview %></p>

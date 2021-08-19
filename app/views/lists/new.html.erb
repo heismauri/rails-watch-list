@@ -4,7 +4,7 @@
     <h1>New list</h1>
     <%= simple_form_for(@list) do |f| %>
       <%= f.input :name %>
-      <%= f.input :image_url %>
+      <%= f.input :banner, as: :file %>
       <%= f.button :submit, class: "btn-primary" %>
     <% end %>
     </div>

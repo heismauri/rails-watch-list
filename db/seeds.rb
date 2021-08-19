@@ -17,8 +17,9 @@ tmdb_json['results'].slice(0, 10).each do |movie|
   new_movie = Movie.create!(
     title: movie['title'],
     overview: movie['overview'],
-    poster_url: "https://image.tmdb.org/t/p/original#{movie['backdrop_path']}",
     rating: movie['vote_average']
   )
+  poster_image = URI.open("https://image.tmdb.org/t/p/original#{movie['backdrop_path']}")
+  new_movie.poster.attach(io: poster_image, filename: movie['backdrop_path'].sub!('/', ''), content_type: 'image/jpg')
   puts "Movie #{new_movie.id}"
 end
