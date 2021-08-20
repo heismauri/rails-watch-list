@@ -9,7 +9,7 @@
   <div class="row py-4">
     <% if !@list.movies.first.nil? %>
       <% @list.movies.each do |movie| %>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="card mb-4 shadow-sm rounded">
           <%= link_to bookmark_path(movie.bookmarks.first), class: "btn btn-outline-danger shadow delete-bookmark", method: :delete, data: { confirm: "Delete '#{movie.title}'?" } do %>
             <i class="fas fa-trash"></i>
